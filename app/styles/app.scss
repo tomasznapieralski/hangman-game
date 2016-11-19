@@ -1,0 +1,30 @@
+$primary-background-color: #264757;
+$primary-font-color: #d5d5d5;
+$application-width: 1200px;
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html {
+	background-color: #1f2f3f;
+	color: $primary-font-color;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+body {
+    margin: 0 auto;
+    width: $application-width;
+}
+
+.application-header {
+    text-align: right;
+}
+
+.application-wrapper {
+    background-color: red;
+}
