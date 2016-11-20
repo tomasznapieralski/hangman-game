@@ -11,7 +11,7 @@ export default Ember.Route.extend({
         this._super(...arguments);
 
         controller.set('wordLength', model.length);
-        controller.set('missingLetters', model);
+        controller.set('missingLetters', model.split('-').join(''));
     },
 
     onKeyPress(key) {

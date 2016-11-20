@@ -24,7 +24,7 @@ export default Ember.Component.extend({
         for (let letter of word) {
             letters.push({
                 letter,
-                isVisible: false
+                isVisible: letter === '-' ? true : false
             });
         }
 
