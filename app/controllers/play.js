@@ -8,6 +8,9 @@ export default Ember.Controller.extend({
     allWrongKeyPressed: '',
     maxNumberOfWrongKeyPressed: 11,
 
+    wordLength: 0,
+    missingLetters: '',
+
     numberOfWrongKeyPressed: Ember.computed('allWrongKeyPressed', function() {
         return this.get('allWrongKeyPressed').length;
     })

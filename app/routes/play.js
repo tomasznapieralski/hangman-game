@@ -16,6 +16,13 @@ export default Ember.Route.extend({
         });
     },
 
+    setupController(controller, model) {
+        this._super(...arguments);
+
+        controller.set('wordLength', model.length);
+        controller.set('missingLetters', model);
+    },
+
     onKeyPress(key) {
         const allKeyPressed = this.get('controller.allKeyPressed'),
             expectedWord = this.get('controller.model');
@@ -28,6 +35,7 @@ export default Ember.Route.extend({
 
         if (expectedWord.includes(key)) {
             this.set('controller.allGoodKeyPressed', `${this.get('controller.allGoodKeyPressed')}${key}`);
+            this.set('controller.missingLetters', this.get('controller.missingLetters').split(key).join(''));
         } else {
             this.set('controller.allWrongKeyPressed', `${this.get('controller.allWrongKeyPressed')}${key}`);
         }
