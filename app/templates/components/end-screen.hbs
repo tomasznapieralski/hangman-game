@@ -1,2 +1,3 @@
 <div class="end-screen__title">{{message}}</div>
-<div><button {{action "restartGame"}}>Reset</button></div>
+<button class="end-screen__button" {{action "restartGame"}}>Restart Game</button>
+{{#link-to 'welcome'}}<button class="end-screen__button">Return to main menu</button>{{/link-to}}
