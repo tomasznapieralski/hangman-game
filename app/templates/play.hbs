@@ -1,9 +1,13 @@
 <div class="play__wrapper">
     <div class="play__top-container">
         {{folk-body numberOfElementsToShow=numberOfWrongKeyPressed}}
-        <div>
+        <div class="play__right-container">
             <div class="play__header">The Hangman Game</div>
             <div class="play__level">Level: {{difficulty}}</div>
+            <div class="play__navigation">
+                <button class="play__button" {{action "restartGame"}}>Restart</button>
+                {{#link-to 'welcome'}}<button class="play__button">Exit</button>{{/link-to}}
+            </div>
             {{missed-letters letters=allWrongKeyPressed}}
         </div>
     </div>

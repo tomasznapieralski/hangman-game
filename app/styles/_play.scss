@@ -4,7 +4,6 @@
         font-size: 60px;
         font-weight: bold;
         line-height: 1em;
-        margin-right: 50px;
         text-align: right;
         text-transform: uppercase;
     }
@@ -14,10 +13,13 @@
         font-size: 30px;
         font-weight: bold;
         line-height: 1em;
-        margin-bottom: 50px;
-        margin-right: 50px;
         text-align: right;
         text-transform: uppercase;
+    }
+
+    &__navigation {
+        margin-bottom: 50px;
+        text-align: right;
     }
     
     &__wrapper {
@@ -33,5 +35,28 @@
         justify-content: space-between;
         margin-top: 50px;
         width: 1200px;
+    }
+
+    &__right-container {
+        margin-right: 50px;
+    }
+
+    &__button {
+        background: 0;
+        border: 2px solid #464646;
+        color: #464646;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 1em;
+        margin: 10px 0;
+        padding: 10px 15px;
+        text-transform: uppercase;
+    }
+
+    &__button:hover,
+    &__button:active {
+        border-color: #ffbc00;
+        color: #ffbc00;
     }
 }
