@@ -7,7 +7,7 @@ export default Ember.Component.extend({
     word: '',
     letters: [],
 
-    didInsertElement() {
+    init() {
         this._super(...arguments);
 
         const letters = [];
@@ -20,5 +20,17 @@ export default Ember.Component.extend({
         }
 
         this.set('letters', letters);
+    },
+
+    didUpdateAttrs() {
+        this._super(...arguments);
+
+        const uncoveredLetters = this.get('uncoveredLetters');
+        
+        this.get('letters').forEach((letter, index) => {
+            if (letter.isHidden && uncoveredLetters.includes(letter.letter)) {
+                this.set(`letters.${index}.isHidden`, false);
+            }
+        });
     }
 });
