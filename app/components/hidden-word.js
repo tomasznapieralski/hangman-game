@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     classNames: ['hidden-word'],
 
+    numberOfSlots: 11,
     uncoveredLetters: '',
     word: '',
     letters: [],
@@ -10,13 +11,21 @@ export default Ember.Component.extend({
     init() {
         this._super(...arguments);
 
-        const letters = [];
+        const word = this.get('word'),
+            numberOfEmptySlots = this.get('numberOfSlots') - word.length,
+            letters = [];
 
-        for (let letter of this.get('word')) {
+        for (let i = 0; i < numberOfEmptySlots; ++i) {
+            letters.push({
+                isDisabled: true
+            });
+        }
+
+        for (let letter of word) {
             letters.push({
                 letter,
-                isHidden: true
-            })
+                isVisible: false
+            });
         }
 
         this.set('letters', letters);
@@ -28,8 +37,8 @@ export default Ember.Component.extend({
         const uncoveredLetters = this.get('uncoveredLetters');
         
         this.get('letters').forEach((letter, index) => {
-            if (letter.isHidden && uncoveredLetters.includes(letter.letter)) {
-                this.set(`letters.${index}.isHidden`, false);
+            if (!letter.isVisible && uncoveredLetters.includes(letter.letter)) {
+                this.set(`letters.${index}.isVisible`, true);
             }
         });
     }
