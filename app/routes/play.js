@@ -1,19 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model(params) {
-        const url = "http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=12&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5";
+    wordnik: Ember.inject.service(),
 
-        return new Promise((resolve, reject) => {
-            Ember.$.ajax(url, {
-                success(data) {
-                    data && data.word ? resolve(data.word.toUpperCase()) : reject('Unexpected error');
-                },
-                error(error) {
-                    reject(error);
-                }
-            });
-        });
+    model(params) {
+        return this.get('wordnik').getRandomWord(params.difficulty);
     },
 
     setupController(controller, model) {
