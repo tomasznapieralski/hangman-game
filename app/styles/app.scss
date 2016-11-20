@@ -1,12 +1,16 @@
 @import 'settings';
 @import 'components/index';
+@import 'play';
 
 .application-header {
     text-align: right;
 }
 
 .application-wrapper {
-    background-color: red;
+    background-color: white;
+    border-radius: 10px;
+    height: 750px;
+    width: 1200px;
 }
 
 .display-none {

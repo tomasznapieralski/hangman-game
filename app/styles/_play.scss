@@ -1,0 +1,16 @@
+.play {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 750px;
+        justify-content: space-between;
+    }
+    
+    &__top-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 50px;
+        width: 1200px;
+    }
+}

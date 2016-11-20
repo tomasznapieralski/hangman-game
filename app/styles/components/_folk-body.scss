@@ -1,4 +1,15 @@
 .folk-body {
-    height: auto;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+
+    &__svg {
+        height: 465px;
+        margin-left: 50px;
+        width: auto;
+    }
+
+    &__bar {
+        height: auto;
+        width: 185px;
+    }
 }
