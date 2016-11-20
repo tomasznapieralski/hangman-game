@@ -1,9 +1,13 @@
 <div class="play__wrapper">
     <div class="play__top-container">
         {{folk-body numberOfElementsToShow=numberOfWrongKeyPressed}}
-        {{missed-letters letters=allWrongKeyPressed}}
+        <div>
+            <div class="play__header">The Hangman Game</div>
+            <div class="play__level">Level: {{difficulty}}</div>
+            {{missed-letters letters=allWrongKeyPressed}}
+        </div>
     </div>
     {{hidden-word word=model uncoveredLetters=allGoodKeyPressed}}
 </div>
 {{end-screen gameStatus=gameStatus restartGame=(action 'restartGame')}}
-<button {{action "restartGame"}}>Reset</button>{{gameStatus}}
+<button {{action "restartGame"}}>Reset</button>{{gameStatus}}{{difficulty}}
