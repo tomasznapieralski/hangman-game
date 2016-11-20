@@ -22,9 +22,10 @@ export default Ember.Route.extend({
 
     onKeyPress(key) {
         const allKeyPressed = this.get('controller.allKeyPressed'),
-            expectedWord = this.get('controller.model');
+            expectedWord = this.get('controller.model'),
+            gameStatus = this.get('controller.gameStatus');
 
-        if (allKeyPressed.includes(key)) {
+        if (gameStatus !== 'playing' || allKeyPressed.includes(key)) {
             return;
         } else {
             this.set('controller.allKeyPressed', `${allKeyPressed}${key}`);

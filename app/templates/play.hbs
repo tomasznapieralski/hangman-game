@@ -5,5 +5,5 @@
     </div>
     {{hidden-word word=model uncoveredLetters=allGoodKeyPressed}}
 </div>
-{{!end-screen restartGame=(action 'restartGame')}}
-<button {{action "restartGame"}}>Reset</button>
+{{end-screen gameStatus=gameStatus restartGame=(action 'restartGame')}}
+<button {{action "restartGame"}}>Reset</button>{{gameStatus}}
