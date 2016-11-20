@@ -1,7 +1,7 @@
 <div class="play__wrapper">
     <div class="play__top-container">
         {{folk-body numberOfElementsToShow=numberOfWrongKeyPressed}}
-        {{allWrongKeyPressed}}
+        {{missed-letters letters=allWrongKeyPressed}}
     </div>
     {{hidden-word word=model uncoveredLetters=allGoodKeyPressed}}
 </div>

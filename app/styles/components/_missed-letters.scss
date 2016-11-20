@@ -1,0 +1,18 @@
+.missed-letters {
+    width: 650px;
+
+    &__title {
+        color: #464646;
+        font-size: 30px;
+        font-weight: bold;
+        line-height: 1em;
+    }
+
+    &__letters {
+        color: #0d83ea;
+        font-size: 60px;
+        font-weight: bold;
+        letter-spacing: 13px;
+        line-height: 1em;
+    }
+}
