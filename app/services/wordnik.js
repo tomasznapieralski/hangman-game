@@ -22,8 +22,8 @@ export default Ember.Service.extend({
                 settings.minLength = 3;
                 settings.maxLength = 5;
                 break;
-            case 'medium':
             default:
+            case 'medium':
                 settings.minLength = 6;
                 settings.maxLength = 8;
                 break;
@@ -38,7 +38,11 @@ export default Ember.Service.extend({
                 data: settings,
                 method: 'GET',
                 success(data) {
-                    data && data.word ? resolve(data.word.toUpperCase()) : reject('Unexpected error');
+                    if (data && data.word) {
+                        resolve(data.word.toUpperCase());
+                    } else {
+                        reject('Unexpected error');
+                    }
                 },
                 error(error) {
                     reject(error);

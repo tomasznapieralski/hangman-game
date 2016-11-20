@@ -1,7 +1,6 @@
 @import 'settings';
 @import 'components/index';
-@import 'play';
-@import 'welcome';
+@import 'routes/index';
 
 .application-header {
     text-align: right;
