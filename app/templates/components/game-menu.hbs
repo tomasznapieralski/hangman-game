@@ -1,5 +1,7 @@
 <div class="game-menu__header">Welcome to<br/>The Hangman Game</div>
 <div class="game-menu__item">Select game difficulty:</div>
 {{#each gameModes as |gameMode|}}
-    {{link-to gameMode 'play' (query-params difficulty=gameMode) class="game-menu__link"}}
+    <div class="game-menu__link-wrapper">
+        {{link-to gameMode 'play' (query-params difficulty=gameMode) class="game-menu__link"}}
+    </div>
 {{/each}}
