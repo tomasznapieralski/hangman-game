@@ -10,8 +10,14 @@ export default Ember.Route.extend({
     setupController(controller, model) {
         this._super(...arguments);
 
-        controller.set('wordLength', model.length);
-        controller.set('missingLetters', model.split('-').join(''));
+        controller.setProperties({
+            allKeyPressed: '',
+            allGoodKeyPressed: '',
+            allWrongKeyPressed: '',
+            maxNumberOfWrongKeyPressed: 11,
+            wordLength: model.length,
+            missingLetters: model.split('-').join('')
+        });
     },
 
     onKeyPress(key) {
@@ -41,6 +47,11 @@ export default Ember.Route.extend({
                     }
                 });
             });
-        }
+        },
+
+        restartGame() {
+            this.refresh();
+            console.log('click');
+        },
     }
 });

@@ -6,11 +6,7 @@ export default Ember.Component.extend({
     numberOfSlots: 11,
     uncoveredLetters: '',
     word: '',
-    letters: [],
-
-    init() {
-        this._super(...arguments);
-
+    letters: Ember.computed('word', 'numberOfSlots', function () {
         const word = this.get('word'),
             numberOfEmptySlots = this.get('numberOfSlots') - word.length,
             letters = [];
@@ -28,8 +24,8 @@ export default Ember.Component.extend({
             });
         }
 
-        this.set('letters', letters);
-    },
+        return letters;
+    }),
 
     didUpdateAttrs() {
         this._super(...arguments);

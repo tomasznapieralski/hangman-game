@@ -13,5 +13,11 @@ export default Ember.Controller.extend({
 
     numberOfWrongKeyPressed: Ember.computed('allWrongKeyPressed', function() {
         return this.get('allWrongKeyPressed').length;
-    })
+    }),
+
+    actions: {
+        restartGame() {
+            this.get('target').send('restartGame');
+        }
+    }
 });
