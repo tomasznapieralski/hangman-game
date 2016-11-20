@@ -6,6 +6,7 @@ export default Ember.Component.extend({
     numberOfSlots: 11,
     uncoveredLetters: '',
     word: '',
+    
     letters: Ember.computed('word', 'numberOfSlots', function () {
         const word = this.get('word'),
             numberOfEmptySlots = this.get('numberOfSlots') - word.length,
