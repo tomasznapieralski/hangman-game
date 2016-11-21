@@ -8,7 +8,7 @@ moduleForComponent('hidden-word', 'Integration | Component | hidden word', {
 test('correct classes are set', function(assert) {
   assert.expect(2);
 
-  this.render(hbs`{{hidden-word uncoveredLetters='' word='test'}}`);
+  this.render(hbs`{{hidden-word uncoveredLetters='te' word='test'}}`);
   assert.equal(this.$('.hidden-word__slot-disabled').length, 7);
   assert.equal(this.$('.hidden-word__letter').length, 11);
 });
