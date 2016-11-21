@@ -1,0 +1,11 @@
+<svg id="triangle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78 82">
+  <defs>
+    <style>
+      .triangle-cls-1 {
+        fill: #0d83ea;
+      }
+    </style>
+  </defs>
+  <title>triangle</title>
+  <polygon class="triangle-cls-1" points="78 0 0 82 78 82 78 0"/>
+</svg>
