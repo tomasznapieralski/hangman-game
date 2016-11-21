@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Service.extend({
-    url: '//api.wordnik.com:80/v4/words.json/randomWord',
+    url: 'http://api.wordnik.com:80/v4/words.json/randomWord',
     settings: {
         hasDictionaryDef: true,
         minCorpusCount: 0,

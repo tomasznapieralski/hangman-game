@@ -1,12 +1,8 @@
 {
   "name": "hangman-game",
   "version": "0.0.0",
-  "description": "Small description for hangman-game goes here",
+  "description": "The Hangman Game",
   "private": true,
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
